@@ -9,23 +9,19 @@ public class Exercicio4 {
 	public static void main(String[] args) {
 
 		String phrase = JOptionPane.showInputDialog("Write something:");
+		HashMap<Character, Integer> letterCount = new HashMap<Character, Integer>();
 
-		char[] letters = phrase.toCharArray();
-		
-		System.out.println(letters);
+		for (int i = 0; i < phrase.length(); i++) {
+			char letter = phrase.charAt(i);
 
-		HashMap<char[], Integer> letterCount = new HashMap<char[], Integer>();
-
-		for (char letter : letters) {
-			System.out.println(letter);
-			if (!letterCount.containsKey(letterCount)) {
-//				letterCount.put(letter, 1);
-				System.out.println("");
-				
+			if (letterCount.containsKey(letter)) {
+				int count = letterCount.get(letter);
+				letterCount.put(letter, count + 1);
+			} else {
+				letterCount.put(letter, 1);
 			}
-
 		}
-
+		
+		System.out.println(letterCount.entrySet());
 	}
-
 }
