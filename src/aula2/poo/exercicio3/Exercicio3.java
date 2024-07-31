@@ -1,23 +1,17 @@
 package aula2.poo.exercicio3;
 
-import java.text.DateFormat;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
-import java.util.Locale;
-
+import java.time.format.DateTimeFormatter;
 import javax.swing.JOptionPane;
 
 public class Exercicio3 {
 	
 	public static void main(String[] args) {
 		
-		Locale locale = new Locale("pt-br", "BR");
-		DateFormat dateFormat = DateFormat.getDateInstance(DateFormat.DEFAULT, locale);
-		
-	
-		
-		LocalDate userDate = LocalDate.parse(JOptionPane.showInputDialog("Enter a date:"));
-		
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+
+		LocalDate userDate = LocalDate.parse(JOptionPane.showInputDialog("Enter a date (dd/MM/yyyy):"), formatter);
 		DayOfWeek weekDay = userDate.getDayOfWeek();
 		
 		JOptionPane.showMessageDialog(null, weekDay);
