@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 public class Venda {
 
-	String clientName;
-	ArrayList<Item> sale;
+	private String clientName;
+	private ArrayList<Item> sale;
 
 	public String getClientName() {
 		return clientName;

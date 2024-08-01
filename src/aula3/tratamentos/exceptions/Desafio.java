@@ -9,10 +9,8 @@ public class Desafio {
 		Venda v = new Venda();
 
 		v.setClientName(JOptionPane.showInputDialog("Enter the client's name:"));
-
-		int itemsAmount;
-
-		itemsAmount = Integer.parseInt(JOptionPane.showInputDialog("Enter the amount of items:"));
+		
+		int itemsAmount = Integer.parseInt(JOptionPane.showInputDialog("Enter the amount of items:"));
 
 		try {
 			if (itemsAmount < 1 || itemsAmount > 10) {
@@ -38,7 +36,8 @@ public class Desafio {
 					}
 				} while (item.price <= 0);
 				
-				v.sale.add(item);
+				v.getSale().add(item);
+				
 			}
 
 		} catch (VendaException e) {
