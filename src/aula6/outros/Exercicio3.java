@@ -6,16 +6,16 @@ public class Exercicio3 {
 	
 	public static void main(String[] args) {
 
-		int somaExample = Calculadora1Enum.SOMA.calculo(4, 5);
+		int somaExample = Calculadora1Enum.SOMA.getCalculo().apply(4, 5);
 		System.out.println(somaExample);
 
-		int subtracaoExample = Calculadora1Enum.SUBTRACAO.calculo(8, 4);
+		int subtracaoExample = Calculadora1Enum.SUBTRACAO.getCalculo().apply(8, 4);
 		System.out.println(subtracaoExample);
 
-		int divisaoExample = Calculadora1Enum.DIVISAO.calculo(8, 4);
+		int divisaoExample = Calculadora1Enum.DIVISAO.getCalculo().apply(8, 4);
 		System.out.println(divisaoExample);
 
-		int multiplicacaoExample = Calculadora1Enum.MULTIPLICACAO.calculo(8, 4);
+		int multiplicacaoExample = Calculadora1Enum.MULTIPLICACAO.getCalculo().apply(8, 4);
 		System.out.println(multiplicacaoExample);
 	}
 
@@ -33,8 +33,12 @@ public class Exercicio3 {
 			this.calculo = calculo;
 		}
 
-		int calculo(int i, int j) {
-			return calculo(i, j);
+		public String getNomeAmigavel() {
+			return nomeAmigavel;
+		}
+
+		public BiFunction<Integer, Integer, Integer> getCalculo() {
+			return calculo;
 		}
 
 	}

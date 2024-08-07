@@ -4,6 +4,10 @@ public class Exercicio2 {
 	
 	public static void main(String[] args) {
 		
+//		for (Calculadora1Enum calculo : Calculadora1Enum.values()) {
+//			System.out.println(calculo.calcula(8, 4));
+//		}
+		
 		int somaExample = Calculadora1Enum.SOMA.calcula(8, 4);
 		System.out.println(somaExample);
 		

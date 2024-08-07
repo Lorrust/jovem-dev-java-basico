@@ -19,5 +19,9 @@ public class Exercicio1 {
 		System.out.println(numbers.stream().mapToInt(number -> number).sum());
 	}
 	
+	int sumNumbers(List<Integer> numbers) {
+		return numbers.stream().mapToInt(number -> number).sum();
+	}
+	
 
 }
