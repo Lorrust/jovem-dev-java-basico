@@ -8,8 +8,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import aula5.stream.Pessoa;
-
 public class Exercicio1 {
 
 	public static void main(String[] args) {
@@ -31,15 +29,12 @@ public class Exercicio1 {
 			people.add(p);
 		}
 
-		for (Pessoa p : people) {
-			System.out.println(p.toString());
-		}
-		System.out.print("\nFiltered People: ");
-		System.out.println(filterPeople(people));
+		Exercicio1 exercicio1 = new Exercicio1();
+		System.out.println(exercicio1.showPeople(people));
 
 	}
 
-	public static String filterPeople(List<Pessoa> people) {
+	public String filterPeople(List<Pessoa> people) {
 
 		return people.stream().filter(p -> p.getBirthDate().isLeapYear() || startsWithVowel(p.getName()))
 				.sorted(Comparator.comparing(Pessoa::getName).reversed()).map(Pessoa::getName)
@@ -47,10 +42,14 @@ public class Exercicio1 {
 
 	}
 
-	public static boolean startsWithVowel(String s) {
+	public boolean startsWithVowel(String s) {
 
 		s = s.toLowerCase();
 		return Stream.of("a", "e", "i", "o", "u").anyMatch(s::startsWith);
 
+	}
+
+	public String showPeople(List<Pessoa> people) {
+		return "Filtered People: " + filterPeople(people);
 	}
 }
